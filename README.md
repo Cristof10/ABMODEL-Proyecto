@@ -7,6 +7,7 @@
 
 - [Descripción y contexto](#descripción-y-contexto)
 - [Funcionalidad](#funcionalidad)
+- [Proceso de Ejecución](#proceso-de-ejecución)
 - [Autor/es](#autores)
 - [Información adicional](#información-adicional)
 
@@ -35,9 +36,29 @@ AsanaSynergy no es solo una plataforma de traducción, es un portal que te invit
 4. **Navegación Intuitiva:**
    Nuestra interfaz fácil de usar garantiza que puedas encontrar la postura que buscas de manera rápida y eficiente. Explora categorías, niveles de dificultad o simplemente busca por nombre, ¡AsanaSynergy te guiará en tu viaje de descubrimiento!
 
+## Proceso de Ejecución
+---
+1. Descarga e instala XAMPP en tu máquina.
+   
+2. Clona o descarga el repositorio del proyecto.
+   
+3. Extrae todos los archivos de la carpeta versión-1 y muévelos a la carpeta 'htdocs' de tu directorio XAMPP. (No los ingreses en una carpeta extra, solo copialos directamente en htdocs)
+   
+4. Inicia Apache y MySQL en el panel de control de XAMPP.
+   
+5. Abre tu navegador web y escribe 'localhost/phpmyadmin'.
+   
+6. En la página de phpMyAdmin, crea una nueva base de datos desde el panel izquierdo y nómbrala como 'diccionario'.
+   
+7. Importa el archivo 'diccionario.sql' ubicado en la carpeta 'database' dentro de la base de datos recién creada y haz clic en OK.
+   
+8. Abre una nueva pestaña y escribe 'localhost' en la URL de tu navegador.
+   
+9. ¡Listo! Eso es todo.
+
 ## Autor/es
 ---
-| [<img src="https://i.postimg.cc/G29HqXq0/image-2023-12-08-224726114.png" width=115><br><sub>Nardy Cachipuendo</sub>](https://github.com/desnes) |  [<img src="https://i.postimg.cc/DwHfd180/image-2023-12-08-224926109.png" width=115><br><sub>Joel Delgado</sub>](https://github.com) | [<img src="https://i.postimg.cc/gJ5PdsdP/Sebastian.jpg" width=115><br><sub>Sebastian Moyano</sub>](https://github.com/WSebastianML) |  [<img src="https://avatars.githubusercontent.com/u/151577243?v=4" width=115><br><sub>Cristofer Paucar</sub>](https://github.com/Cristof10) |  [<img src="https://i.postimg.cc/4d8p3KFG/image-2023-12-08-224641740.png" width=115><br><sub>Nathaly Simba</sub>](https://github.com/Nathaly07) 
+| [<img src="https://i.postimg.cc/G29HqXq0/image-2023-12-08-224726114.png" width=115><br><sub>Nardy Cachipuendo</sub>](https://github.com/desnes) |  [<img src="https://i.postimg.cc/DwHfd180/image-2023-12-08-224926109.png" width=115><br><sub>Joel Delgado</sub>](https://github.com/JoelDelgado246) | [<img src="https://i.postimg.cc/gJ5PdsdP/Sebastian.jpg" width=115><br><sub>Sebastian Moyano</sub>](https://github.com/WSebastianML) |  [<img src="https://avatars.githubusercontent.com/u/151577243?v=4" width=115><br><sub>Cristofer Paucar</sub>](https://github.com/Cristof10) |  [<img src="https://i.postimg.cc/4d8p3KFG/image-2023-12-08-224641740.png" width=115><br><sub>Nathaly Simba</sub>](https://github.com/Nathaly07) 
 | :---: | :---: | :---: | :---: | :---: |
 
 ## Información adicional
