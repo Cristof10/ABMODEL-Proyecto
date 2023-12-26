@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+body {
+  margin: 0;
+}
+h1 {
+  margin-bottom: 0;
+}
+
+/* CSS para el encabezado */
+header {
+
+  background-color: rgba(70, 127, 215, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+/* CSS para el cuerpo */
+
+header h1{
+  background-color: none;
+  margin: 0%;
+  padding: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}	
+
+
+
+.img-container {
+  height: 250px; /* Ajusta la altura según tus necesidades */
+  width: auto; /* El ancho del contenedor se ajustará automáticamente */
+  overflow: hidden; /* Para recortar cualquier parte que exceda la altura fijada */
+  text-align: center; /* Centra la imagen horizontalmente */
+}
+
+.img-container img {
+  width: auto;
+  height: 100%;
+  object-fit: cover; /* La imagen se ajustará manteniendo su relación de aspecto y cubrirá completamente el contenedor */
+  display: inline-block; /* Hace que la imagen se comporte como un bloque en línea para aplicar el centrado horizontal */
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+
+.titulo{
+  font-family: 'Tilt Warp', sans-serif;
+  
+}
+
+.fondo-principal{
+  height: 250px;
+  width: 100%;
+  background-image: url("../images/PortadaOpcion4.jpg"); 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  
+}
+
+footer {
+  height: 200px;
+  background-color: rgba(131, 170, 229, 1);
+}
+
