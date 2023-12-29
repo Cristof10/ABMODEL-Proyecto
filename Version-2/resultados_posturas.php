@@ -27,10 +27,10 @@
         if (!empty($posturas) && is_array($posturas)) {
             foreach ($posturas as $index => $postura) { ?>
                 <?php $imagenURL = "images/" . $postura['imagenURL']; ?>
-                <div class="col-sm-4 mb-3">
+                <div class="col-sm-3 col-xs-6 mb-3">
                     <div class="card h-100">
-                        <div class="img-container">
-                            <img src="<?php echo $imagenURL; ?>" class="card-img-top" alt="<?php echo $postura['terminoSanskrit']; ?>">
+                        <div >
+                            <img src="<?php echo $imagenURL; ?>" class="card-img-top img-fluid" alt="<?php echo $postura['terminoSanskrit']; ?>">
                         </div>
                          
                         <div class="card-body">

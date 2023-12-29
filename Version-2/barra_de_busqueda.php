@@ -12,14 +12,15 @@
 
      <!-- CSS stylesheet -->
      <link rel="stylesheet" href="css\style.css">
-     <script src="js\app.js"></script>
+
+
 
 
     <title>Document</title>
 </head>
 <body>
-    <div class="container py-5" style="max-width: 600px; margin: auto;">
-        <h1 class="mb-4 titulo">DICCIONARIO DE YOGA</h1>
+    <div class="container py-4" style="max-width: 600px; margin: auto;">
+        <h1 class="mb-2 titulo text-center">DICCIONARIO DE YOGA</h1>
         <form action="busqueda_por_palabra_clave.php" method="get">
             <div class="d-flex mb-3">
                 <div class="col-3 me-3">
@@ -31,47 +32,17 @@
                     </div>
                 </div>
                 
-                <div class="input-group me-3" style="flex-grow: 1; max-width: 300px;">
-                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-                    <input type="search" class="form-control" id="keyword" name="keyword" placeholder="Escriba aquí" required>
+                <div class="input-group me-3" style="flex-grow: 1;">
+                    <input type="search" class="form-control" id="keyword" name="keyword" placeholder="Escriba aquí" >
+                    <span class="input-group-text" id="basic-addon1" style="background-color: transparent;"><i class="bi bi-search"></i></span>
                 </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
+
+                <!-- <button type="submit" class="btn btn-primary">Buscar</button> -->
             </div>
         </form>
     </div>
 
-
-    <script>
-        // Almacena la selección del usuario en el almacenamiento local cuando se envía el formulario
-        document.querySelector('form').addEventListener('submit', function() {
-            localStorage.setItem('filterOptions', document.getElementById('filterOptions').value);
-        });
-
-        // Recupera la selección del usuario del almacenamiento local cuando se carga la página
-        document.addEventListener('DOMContentLoaded', function() {
-            var filterOptions = localStorage.getItem('filterOptions');
-            if (filterOptions) {
-                document.getElementById('filterOptions').value = filterOptions;
-            }
-        });
-
-        document.getElementById('keyword').addEventListener('input', function (e) {
-        var regex = /\d/g; // Expresión regular para buscar números
-            if (regex.test(e.target.value)) {
-                e.target.value = e.target.value.replace(regex, ''); // Elimina los números
-                alert('No se permiten números en este campo.');
-            }
-        });
-        document.querySelector('form').addEventListener('submit', function(event) {
-            var input = document.getElementById('keyword').value;
-            if(!validarInput(input)) {
-                event.preventDefault();
-                alert('Entrada no válida. Por favor, solo usa caracteres permitidos.');
-            }
-        });
-
-
-    </script>
-
+        <!-- JS -->
+        <script src="js\validacion.js"></script>
 </body>
 </html>

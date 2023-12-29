@@ -1,54 +1,55 @@
 <?php
 
 include("db_connection.php");
-// Supongamos que ya tienes una conexión a la base de datos llamada $connection
 
-// Obtener la palabra proporcionada por el usuario desde la página web
+$path_buscar_todas_las_posturas = "functions\buscar_todas_las_posturas.php";
+$path_buscar_por_palabra_clave_postura = "functions\buscar_por_palabra_clave_postura.php";
+$path_buscar_todos_los_morfemas = "functions\buscar_todos_los_morfemas.php";
+$path_buscar_por_palabra_clave_morfema = "functions\buscar_por_palabra_clave_morfema.php";
 
-//echo "<br>";
 
-// Obtener el filtro proporcionado por el usuario desde la página web
-// Verifica si la variable GET 'filterOptions' está definida
-if (isset($_GET['filterOptions'])) {
-    // Si está definida, realiza la búsqueda
-    $user_filter = $_GET['filterOptions'];
-    if ($user_filter == "postura") {
-        // Verifica si la variable GET 'keyword' está definida
-        if (isset($_GET['keyword'])) {
-            // Si está definida, realiza la búsqueda
-            $user_keyword = $_GET['keyword'];
-            $user_keyword = mysqli_real_escape_string($connection, $user_keyword);
-            include("buscar_por_palabra_clave.php");
-        } 
-    } else if ($user_filter == "morfema") {
-        // Verifica si la variable GET 'keyword' está definida
-        if (isset($_GET['keyword'])) {
-            // Si está definida, realiza la búsqueda
-            $user_keyword = $_GET['keyword'];
-            $user_keyword = mysqli_real_escape_string($connection, $user_keyword);
-            include("buscar_por_palabra_clave_morfema.php");
-        } else {
-            include("buscar_todos_los_morfemas.php");
+$user_filter = isset($_GET['filterOptions']) ? $_GET['filterOptions'] : "";
+$user_keyword = isset($_GET['keyword']) ? $_GET['keyword'] : "";
+
+$user_filter = mysqli_real_escape_string($connection, trim($user_filter));
+$user_keyword = mysqli_real_escape_string($connection, trim($user_keyword));
+
+switch ($user_filter) {
+    case "postura":
+        if ($user_keyword != "") {
+            include($path_buscar_por_palabra_clave_postura);
         }
-
-    } else {
+        break;
+    case "morfema":
+        if ($user_keyword != "") {
+            include($path_buscar_por_palabra_clave_morfema);
+        } else {
+            include($path_buscar_todos_los_morfemas);
+        }
+        break;
+    default:
         $user_filter = "";
-    }
-} else {
-    $user_filter = "";
+        break;
 }
-$user_filter = mysqli_real_escape_string($connection, $user_filter);
-
 
 include("header.php");
 include("barra_de_busqueda.php");
-if ($user_filter == "postura") {
-    include("resultados_posturas.php");
-} else if ($user_filter == "morfema") {
-    include("resultados_morfemas.php");
-} else {
-    header("Location: pagina_inicial.php");
+// indicar que hay resultados para la palabra clave ingresada
+if ($user_filter != "" && $user_keyword != "") {
+    echo "<h4 class='text-center'>Resultados para la palabra clave: " . $user_keyword . "</h4>";
 }
+switch ($user_filter) {
+    case "postura":
+        include("resultados_posturas.php");
+        break;
+    case "morfema":
+        include("resultados_morfemas.php");
+        break;
+    default:
+        header("Location: pagina_inicial.php");
+        break;
+}
+
 include("footer.php");
 
 ?>
