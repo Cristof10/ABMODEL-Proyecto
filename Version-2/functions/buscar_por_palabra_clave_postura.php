@@ -1,6 +1,6 @@
 <?php
 // Construir la consulta SQL para obtener la información de la postura y sus morfemas asociados
-$sql = "SELECT pd.terminoID, pd.terminoEnglish, pd.terminoSanskrit, pd.terminoSpanish, pd.imagenURL, m.morfemaSanskrit AS traduccionMorfemaSanskrit, m.morfemaSpanish AS traduccionMorfemaSpanish ";
+$sql = "SELECT pd.terminoID, pd.terminoEnglish, pd.terminoSanskrit, pd.terminoSpanish, pd.imagenURL, pd.videoURL, m.morfemaSanskrit AS traduccionMorfemaSanskrit, m.morfemaSpanish AS traduccionMorfemaSpanish,  m.morfemaEnglish AS traduccionMorfemaEnglish ";
 $sql .= "FROM postura pd ";
 $sql .= "LEFT JOIN relacion_postura_morfema rpm ON pd.terminoID = rpm.terminoID ";
 $sql .= "LEFT JOIN morfema m ON rpm.morfemaID = m.morfemaID ";
@@ -21,6 +21,7 @@ if (mysqli_num_rows($resultado) > 0) {
         $terminoSanskrit = $fila['terminoSanskrit'];
         $terminoSpanish = $fila['terminoSpanish'];
         $imagenURL = $fila['imagenURL'];
+        $videoURL = $fila['videoURL'];
 
         // Organizar la información por postura
         if (!isset($posturas[$terminoID])) {
@@ -30,6 +31,7 @@ if (mysqli_num_rows($resultado) > 0) {
                 'terminoSanskrit' => $terminoSanskrit,
                 'terminoSpanish' => $terminoSpanish,
                 'imagenURL' => $imagenURL,
+                'videoURL' => $videoURL,
                 // Agregar información de morfemas a la postura
                 'morfemas' => array()
             );
@@ -40,39 +42,17 @@ if (mysqli_num_rows($resultado) > 0) {
             // Agregar información de morfemas a la postura
             $traduccionMorfemaSanskrit = $fila['traduccionMorfemaSanskrit'];
             $traduccionMorfemaSpanish = $fila['traduccionMorfemaSpanish'];
+            $traduccionMorfemaEnglish = $fila['traduccionMorfemaEnglish'];
 
             $posturas[$terminoID]['morfemas'][] = array(
                 'traduccionMorfemaSanskrit' => $traduccionMorfemaSanskrit,
                 'traduccionMorfemaSpanish' => $traduccionMorfemaSpanish,
+                'traduccionMorfemaEnglish' => $traduccionMorfemaEnglish
             );
         }
     }
 }
-    /*
-    // Mostrar la información en la interfaz de usuario
-    foreach ($posturas as $postura) {
-        echo "Término ID: " . $postura['terminoID'] . "<br>";
-        echo "English: " . $postura['terminoEnglish'] . "<br>";
-        echo "Sanskrit: " . $postura['terminoSanskrit'] . "<br>";
-        echo "Spanish: " . $postura['terminoSpanish'] . "<br>";
 
-        // Mostrar la descomposición en morfemas si hay morfemas relacionados
-        if (!empty($postura['morfemas'])) {
-            echo "Descomposición en Morfemas:<br>";
-            foreach ($postura['morfemas'] as $morfemaInfo) {
-                echo "- Traducción (Sanskrit): " . $morfemaInfo['traduccionMorfemaSanskrit'] . "<br>";
-                echo "- Traducción (Spanish): " . $morfemaInfo['traduccionMorfemaSpanish'] . "<br>";
-            }
-        } else {
-            echo "No hay morfemas relacionados.<br>";
-        }
-
-        echo "<br>";
-        //imprimir el array en consola 
-        echo "<script> console.log(" . json_encode($postura) . ") </script>";
-    }
-    */
-    
  else {
     echo "No se encontraron resultados.";
 }

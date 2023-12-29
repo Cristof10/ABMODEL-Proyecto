@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 12, 2023 at 11:01 PM
+-- Generation Time: Dec 29, 2023 at 04:43 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -81,34 +81,35 @@ CREATE TABLE `postura` (
   `terminoEnglish` varchar(500) DEFAULT NULL,
   `terminoSanskrit` varchar(500) DEFAULT NULL,
   `terminoSpanish` varchar(500) DEFAULT NULL,
-  `imagenURL` varchar(100) DEFAULT NULL
+  `imagenURL` varchar(100) DEFAULT NULL,
+  `videoURL` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `postura`
 --
 
-INSERT INTO `postura` (`terminoID`, `terminoEnglish`, `terminoSanskrit`, `terminoSpanish`, `imagenURL`) VALUES
-(1, 'Mountain Pose', 'Tadasana\r\n', 'Postura de la Montaña', '1.Tadasana.png'),
-(2, 'Downward-Facing Dog', 'Adho Mukha Svanasana', 'Perro mirando hacia abajo', '2.Adho-Mukha-Svanasana.png'),
-(3, 'Warrior I', 'Virabhadrasana I', 'Guerrero I', '3.Virabhadrasana-I.png'),
-(4, 'Warrior II', 'Virabhadrasana II', ' Guerrero II', '4.Virabhadrasana-II.png'),
-(5, 'Tree Pose', 'Vrikshasana', 'Postura del Árbol', '5.Vrikshasana.png'),
-(6, 'Child\'s Pose', 'Balasana', 'Postura del Niño', '6.Balasana.png'),
-(7, 'Half Cobra Pose', 'Ardha Bhujangasana', 'Postura de la Cobra a la mitad', '7.Ardha-Bhujangasana.png'),
-(8, 'Seated Forward Bend', 'Paschimottanasana', 'Flexión hacia adelante sentado', '8.Paschimottanasana.png'),
-(9, 'Bridge Pose', 'Setu Bandhasana', 'Postura del Puente', '9.Setu-Bandhasana.png'),
-(10, 'Corpse Pose', 'Shavasana', 'Postura del Cadáver', '10.Shavasana.png'),
-(11, 'Triangle Pose', 'Trikonasana', 'Postura del Triángulo', '11.Trikonasana.png'),
-(12, 'Plank Pose', 'Kumbhakasana', 'Postura de la Plancha', '12.Kumbhakasana.png'),
-(13, 'Upward-Facing Dog', 'Urdhva Mukha Svanasana', 'Perro mirando hacia arriba', '13.Urdhva-Mukha-Svanasana.png'),
-(14, 'Fish Pose', 'Matsyasana', 'Postura del Pez', '14.Matsyasana.png'),
-(15, 'Chair Pose', 'Utkatasana', 'Postura de la Silla', '15.Utkatasana.png'),
-(16, 'Garland Pose', 'Malasana', 'Postura de la Guirnalda', '16.Malasana.png'),
-(17, 'Pigeon Pose', 'Eka Pada Rajakapotasana', 'Postura de la Paloma Real', '17.Eka-Pada-Rajakapotasana.png'),
-(18, 'Upward Salute', 'Urdhva Hastasana', 'Saludo hacia arriba', '18.Urdhva-Hastasana.png'),
-(19, 'Revolved Triangle Pose', 'Parivrtta Trikonasana', 'Postura del Triángulo Invertido', '19.Parivrtta-Trikonasana.png'),
-(20, 'Revolved Head To Knee Pose', 'Parivrtta Janu Sirsasana', 'Postura de la Cabeza a la Rodilla Invertida', '20.Parivrtta-Janu-Sirsasana.png');
+INSERT INTO `postura` (`terminoID`, `terminoEnglish`, `terminoSanskrit`, `terminoSpanish`, `imagenURL`, `videoURL`) VALUES
+(1, 'Mountain Pose', 'Tadasana\r\n', 'Postura de la Montaña', '1.Tadasana.png', 'https://www.youtube.com/embed/yAgjjEOEveY?si=n9fnUTEAOwZIpwDH'),
+(2, 'Downward-Facing Dog', 'Adho Mukha Svanasana', 'Perro mirando hacia abajo', '2.Adho-Mukha-Svanasana.png', 'https://www.youtube.com/embed/3AB10c-KMeg?si=mdlL1jernbTKaX4O'),
+(3, 'Warrior I', 'Virabhadrasana I', 'Guerrero I', '3.Virabhadrasana-I.png', 'https://www.youtube.com/embed/9Gk8PoBs7xE?si=n9DAalbhllbNN4PM'),
+(4, 'Warrior II', 'Virabhadrasana II', ' Guerrero II', '4.Virabhadrasana-II.png', 'https://www.youtube.com/embed/EemJnHpmerA?si=Y2csiRlkKMzoZ37W'),
+(5, 'Tree Pose', 'Vrikshasana', 'Postura del Árbol', '5.Vrikshasana.png', 'https://www.youtube.com/embed/2ZCBRdD-lE0?si=k96ekgtwj6-AZdAY'),
+(6, 'Child\'s Pose', 'Balasana', 'Postura del Niño', '6.Balasana.png', 'https://www.youtube.com/embed/CLlAUN_r75k?si=wh5QOj9mM_qKUnxl'),
+(7, 'Half Cobra Pose', 'Ardha Bhujangasana', 'Postura de la Cobra a la mitad', '7.Ardha-Bhujangasana.png', 'https://www.youtube.com/embed/YiaUHv5o5ls?si=5Pj3AIr6Cm1KV88k'),
+(8, 'Seated Forward Bend', 'Paschimottanasana', 'Flexión hacia adelante sentado', '8.Paschimottanasana.png', 'https://www.youtube.com/embed/wG0eR6W1Jxg?si=8rcQ3wcojh6ZXpvl'),
+(9, 'Bridge Pose', 'Setu Bandhasana', 'Postura del Puente', '9.Setu-Bandhasana.png', 'https://www.youtube.com/embed/Hgca0II_CKI?si=3KqpUGEBr0Uy_rXb'),
+(10, 'Corpse Pose', 'Shavasana', 'Postura del Cadáver', '10.Shavasana.png', 'https://www.youtube.com/embed/R-DB4qF6Egk?si=uA_QBiOPPJJezqmN'),
+(11, 'Triangle Pose', 'Trikonasana', 'Postura del Triángulo', '11.Trikonasana.png', 'https://www.youtube.com/embed/ioUcFTiBCcY?si=qx9Of1AF0qTs-vup'),
+(12, 'Plank Pose', 'Kumbhakasana', 'Postura de la Plancha', '12.Kumbhakasana.png', 'https://www.youtube.com/embed/OL1TFWREaMw?si=BmburCRf00fu12vM'),
+(13, 'Upward-Facing Dog', 'Urdhva Mukha Svanasana', 'Perro mirando hacia arriba', '13.Urdhva-Mukha-Svanasana.png', 'https://www.youtube.com/embed/L57v0Lq9EcM?si=Y0QOUHdVN1p_Qm0T'),
+(14, 'Fish Pose', 'Matsyasana', 'Postura del Pez', '14.Matsyasana.png', 'https://www.youtube.com/embed/BAhOz-b_dEc?si=3pMeZ_GNtNIqkTHQ'),
+(15, 'Chair Pose', 'Utkatasana', 'Postura de la Silla', '15.Utkatasana.png', 'https://www.youtube.com/embed/iAclKRoyOjU?si=qfVj5GAYL4DVCqh-'),
+(16, 'Garland Pose', 'Malasana', 'Postura de la Guirnalda', '16.Malasana.png', 'https://www.youtube.com/embed/ZhcTGjiZhDc?si=73VuHwZXGMxdwQTs'),
+(17, 'Pigeon Pose', 'Eka Pada Rajakapotasana', 'Postura de la Paloma Real', '17.Eka-Pada-Rajakapotasana.png', 'https://www.youtube.com/embed/625gxCZFh74?si=LXzcL5mfBqQw5e5O'),
+(18, 'Upward Salute', 'Urdhva Hastasana', 'Saludo hacia arriba', '18.Urdhva-Hastasana.png', 'https://www.youtube.com/embed/QMVJp_Fop2g?si=tTJMT18z2Bgo8f8y'),
+(19, 'Revolved Triangle Pose', 'Parivrtta Trikonasana', 'Postura del Triángulo Invertido', '19.Parivrtta-Trikonasana.png', 'https://www.youtube.com/embed/ioUcFTiBCcY?si=IvnMf9mspTadQjp-'),
+(20, 'Revolved Head To Knee Pose', 'Parivrtta Janu Sirsasana', 'Postura de la Cabeza a la Rodilla Invertida', '20.Parivrtta-Janu-Sirsasana.png', 'https://www.youtube.com/embed/QCP6TEuosVs?si=kGA7VE7PgxzP_62g');
 
 -- --------------------------------------------------------
 
@@ -214,7 +215,7 @@ ALTER TABLE `relacion_postura_morfema`
 -- AUTO_INCREMENT for table `morfema`
 --
 ALTER TABLE `morfema`
-  MODIFY `morfemaID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `morfemaID` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `postura`
@@ -226,7 +227,7 @@ ALTER TABLE `postura`
 -- AUTO_INCREMENT for table `relacion_postura_morfema`
 --
 ALTER TABLE `relacion_postura_morfema`
-  MODIFY `relacionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `relacionID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- Constraints for dumped tables

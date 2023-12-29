@@ -28,7 +28,7 @@
             foreach ($posturas as $index => $postura) { ?>
                 <?php $imagenURL = "images/" . $postura['imagenURL']; ?>
                 <div class="col-sm-3 col-xs-6 mb-3">
-                    <div class="card h-100">
+                    <a href="detalle_postura.php?id=<?php echo $postura['terminoID']; ?>" class="card h-100  link-underline-opacity-0 text-decoration-none">
                         <div >
                             <img src="<?php echo $imagenURL; ?>" class="card-img-top img-fluid" alt="<?php echo $postura['terminoSanskrit']; ?>">
                         </div>
@@ -49,11 +49,10 @@
                                 <?php } ?>
                             </p>
                         </div>
-                    </div>
+                    </a>
                 </div>
             <?php } }
         else {
-            // Si $posturas está vacío o no es un arreglo, puedes mostrar un mensaje o tomar la acción correspondiente
             echo "<div class='col-sm-12 text-center'>";
             echo "<h3>No hay datos disponibles.</h2>";
             echo "<p>Por favor, intenta con otra búsqueda.</p>";
@@ -61,6 +60,7 @@
         } ?>
     </div>
 </div>
+
 
 
 

@@ -1,6 +1,6 @@
 <?php
 
-$sql = "SELECT pd.terminoID, pd.terminoEnglish, pd.terminoSanskrit, pd.terminoSpanish, pd.imagenURL, m.morfemaSanskrit AS traduccionMorfemaSanskrit, m.morfemaSpanish AS traduccionMorfemaSpanish ";
+$sql = "SELECT pd.terminoID, pd.terminoEnglish, pd.terminoSanskrit, pd.terminoSpanish, pd.imagenURL, pd.videoURL, m.morfemaSanskrit AS traduccionMorfemaSanskrit, m.morfemaSpanish AS traduccionMorfemaSpanish, m.morfemaEnglish AS traduccionMorfemaEnglish ";
 $sql .= "FROM postura pd ";
 $sql .= "LEFT JOIN relacion_postura_morfema rpm ON pd.terminoID = rpm.terminoID ";
 $sql .= "LEFT JOIN morfema m ON rpm.morfemaID = m.morfemaID ";
@@ -19,6 +19,7 @@ if (mysqli_num_rows($resultado) > 0) {
         $terminoSanskrit = $fila['terminoSanskrit'];
         $terminoSpanish = $fila['terminoSpanish'];
         $imagenURL = $fila['imagenURL'];
+        $videoURL = $fila['videoURL'];
 
         // Organizar la información por postura
         if (!isset($posturas[$terminoID])) {
@@ -28,6 +29,7 @@ if (mysqli_num_rows($resultado) > 0) {
                 'terminoSanskrit' => $terminoSanskrit,
                 'terminoSpanish' => $terminoSpanish,
                 'imagenURL' => $imagenURL,
+                'videoURL' => $videoURL,
                 // Agregar información de morfemas a la postura
                 'morfemas' => array()
             );
@@ -38,10 +40,12 @@ if (mysqli_num_rows($resultado) > 0) {
             // Agregar información de morfemas a la postura
             $traduccionMorfemaSanskrit = $fila['traduccionMorfemaSanskrit'];
             $traduccionMorfemaSpanish = $fila['traduccionMorfemaSpanish'];
+            $traduccionMorfemaEnglish = $fila['traduccionMorfemaEnglish'];
 
             $posturas[$terminoID]['morfemas'][] = array(
                 'traduccionMorfemaSanskrit' => $traduccionMorfemaSanskrit,
                 'traduccionMorfemaSpanish' => $traduccionMorfemaSpanish,
+                'traduccionMorfemaEnglish' => $traduccionMorfemaEnglish
             );
         }
     }

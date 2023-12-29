@@ -2,7 +2,7 @@
 
 include("db_connection.php");
 // construir la consulta SQL para obtener la información del morfema 
-$sql = "SELECT m.morfemaID, m.morfemaSanskrit, m.morfemaSpanish, morfemaEnglish ";
+$sql = "SELECT m.morfemaID, m.morfemaSanskrit, m.morfemaSpanish, m.morfemaEnglish ";
 $sql .= "FROM morfema m ";
 $sql .= "WHERE m.morfemaSanskrit LIKE '%$user_keyword%' OR m.morfemaSpanish LIKE '%$user_keyword%' OR m.morfemaEnglish LIKE '%$user_keyword'";
 // Ejecutar la consulta
