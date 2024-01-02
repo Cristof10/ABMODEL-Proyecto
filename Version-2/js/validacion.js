@@ -19,19 +19,23 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('filterOptions').value = filterOptions;
     }
 });
-
+//validacion de entrada de números en el form de busqueda
 document.getElementById('keyword').addEventListener('input', function (e) {
 var regex = /\d/g; // Expresión regular para buscar números
     if (regex.test(e.target.value)) {
         e.target.value = e.target.value.replace(regex, ''); // Elimina los números
-        alert('Oops, parece que hay un problema. Por favor, ingrese solo letras en este campo y evite usar números.'); 
+        alert('Error: Campo no válido. Por favor, ingrese solo letras en este campo y evite usar números.');
+        
+
+        
     }
 });
+//validacion de entrada de caracteres especiales en el form de busqueda
 document.querySelector('form').addEventListener('submit', function(event) {
     var input = document.getElementById('keyword').value;
-    if(!validarInput(input)) {
+    if(!validarInput(input) && input != "") {
         event.preventDefault();
-        alert('Ups, parece que hay un problema. Por favor, use solo letras y caracteres válidos.');
+        alert('Error: Campo no válido. Por favor, ingrese al menos una letra o carácter válido.');
     }
 });
 //validacion de entrada null en el form de busqueda
@@ -39,7 +43,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
     var input = document.getElementById('keyword');
     if(input.value.trim() == "") {
         event.preventDefault();
-        alert('Oops, parece que hay un problema. Por favor, ingrese al menos una letra o carácter válido.');
+        alert('Error: Campo vacío. Por favor, use solo letras y caracteres válidos');
         input.focus();
     }
 });

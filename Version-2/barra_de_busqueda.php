@@ -33,8 +33,8 @@
                 </div>
                 
                 <div class="input-group me-3" style="flex-grow: 1;">
-                    <input type="search" class="form-control" id="keyword" name="keyword" placeholder="Escriba aquí" >
-                    <span class="input-group-text" id="basic-addon1" style="background-color: transparent;"><i class="bi bi-search"></i></span>
+                    <input type="search" class="form-control" id="keyword" name="keyword" style="border-right: none;" placeholder="Escriba aquí" >
+                    <span class="input-group-text" id="basic-addon1" style="background-color: transparent; border-left: none;"><i class="bi bi-search"></i></span>
                 </div>
 
                 <!-- <button type="submit" class="btn btn-primary">Buscar</button> -->
