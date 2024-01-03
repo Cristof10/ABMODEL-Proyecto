@@ -38,9 +38,9 @@ if (mysqli_num_rows($resultado) > 0) {
         // Verificar si hay morfemas relacionados antes de agregar la información de morfemas
         if (!empty($fila['traduccionMorfemaSanskrit']) || !empty($fila['traduccionMorfemaSpanish'])) {
             // Agregar información de morfemas a la postura
-            $traduccionMorfemaSanskrit = $fila['traduccionMorfemaSanskrit'];
-            $traduccionMorfemaSpanish = $fila['traduccionMorfemaSpanish'];
-            $traduccionMorfemaEnglish = $fila['traduccionMorfemaEnglish'];
+            $traduccionMorfemaSanskrit = strtolower($fila['traduccionMorfemaSanskrit']);
+            $traduccionMorfemaSpanish = strtolower($fila['traduccionMorfemaSpanish']);
+            $traduccionMorfemaEnglish = strtolower($fila['traduccionMorfemaEnglish']);            
 
             $posturas[$terminoID]['morfemas'][] = array(
                 'traduccionMorfemaSanskrit' => $traduccionMorfemaSanskrit,
