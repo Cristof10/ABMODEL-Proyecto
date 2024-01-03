@@ -21,6 +21,7 @@
                                 <strong>Sánscrito:</strong> <?php echo $morfema['morfemaSanskrit'] ?><br>
                                 <strong>Español:</strong> <?php echo $morfema['morfemaSpanish'] ?><br>
                                 <strong>Ingles:</strong> <?php echo $morfema['morfemaEnglish'] ?><br>
+                                
                             </p>
                         </div>
                     </div>

@@ -33,7 +33,7 @@ var regex = /\d/g; // Expresión regular para buscar números
 //validacion de entrada de caracteres especiales en el form de busqueda
 document.querySelector('form').addEventListener('submit', function(event) {
     var input = document.getElementById('keyword').value;
-    if(!validarInput(input) && input != "") {
+    if(!validarInput(input) && input != ""); {
         event.preventDefault();
         alert('Error: Campo no válido. Por favor, ingrese al menos una letra o carácter válido.');
     }

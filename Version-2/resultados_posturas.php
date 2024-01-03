@@ -41,8 +41,11 @@
                                 <?php if (!empty($postura['morfemas'])) { ?>
                                     <strong>Morfemas:</strong><br>
                                     <?php foreach ($postura['morfemas'] as $morfemaInfo) { ?>
-                                        <?php echo $morfemaInfo['traduccionMorfemaSanskrit'] ?>
-                                        = <?php echo $morfemaInfo['traduccionMorfemaSpanish'] ?><br>
+                                        <strong>Sánscrito: </strong><?php echo $morfemaInfo['traduccionMorfemaSanskrit'] ?><br>
+                                        <strong>Español:   </strong><?php echo $morfemaInfo['traduccionMorfemaSpanish'] ?><br>
+                                        <strong>Inglés:    </strong><?php echo $morfemaInfo['traduccionMorfemaEnglish'] ?><br>
+                                        --
+                                        <br>
                                     <?php } ?>
                                 <?php } else { ?>
                                     No hay morfemas relacionados.<br>

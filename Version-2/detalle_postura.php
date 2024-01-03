@@ -12,16 +12,16 @@
 	<!-- CSS stylesheet -->
 	<link rel="stylesheet" href="css\style.css">
     <style>
-        main{
-            height: 750px;
+        main{           
             width: 100%;
-            padding-top: 30px;
         }
 
         .fondo-video{
-            height: 700px;
+            
             background-color: #DDD;
-            padding-top: 30px;
+            padding: 1rem 0;
+            margin: 1rem 0;
+
         }
     </style>
     <!-- fuentes-->
@@ -53,9 +53,9 @@
             // Iterar sobre los resultados y organizar la información por postura
             while ($fila = mysqli_fetch_assoc($resultado)) {
                 $terminoID = $fila['terminoID'];
-                $terminoEnglish = $fila['terminoEnglish'];
+                $terminoEnglish = strtolower($fila['terminoEnglish']);
                 $terminoSanskrit = $fila['terminoSanskrit'];
-                $terminoSpanish = $fila['terminoSpanish'];
+                $terminoSpanish = strtolower($fila['terminoSpanish']);
                 $imagenURL = $fila['imagenURL'];
                 $videoURL = $fila['videoURL'];
 
@@ -76,9 +76,10 @@
                 // Verificar si hay morfemas relacionados antes de agregar la información de morfemas
                 if (!empty($fila['traduccionMorfemaSanskrit']) || !empty($fila['traduccionMorfemaSpanish'])) {
                     // Agregar información de morfemas a la postura
-                    $traduccionMorfemaSanskrit = $fila['traduccionMorfemaSanskrit'];
-                    $traduccionMorfemaSpanish = $fila['traduccionMorfemaSpanish'];
-                    $traduccionMorfemaEnglish = $fila['traduccionMorfemaEnglish'];
+                    $traduccionMorfemaSanskrit = strtolower($fila['traduccionMorfemaSanskrit']);
+                    $traduccionMorfemaSpanish = strtolower($fila['traduccionMorfemaSpanish']);
+                    $traduccionMorfemaEnglish = strtolower($fila['traduccionMorfemaEnglish']);
+
 
                     $posturas[$terminoID]['morfemas'][] = array(
                         'traduccionMorfemaSanskrit' => $traduccionMorfemaSanskrit,
@@ -96,7 +97,7 @@
         <h1 class="text-center titulo">ASANASYNERGY</h1>
     </header>
 
-    <main>
+    <main class="container">
         <div class="fondo-video container text-center">
             <div>
                 <?php 
@@ -104,13 +105,14 @@
                     foreach ($posturas as $index => $postura) { ?>
                         <?php $imagenURL = "images/" . $postura['imagenURL']; ?>
                         <div class="row mb-3 justify-content-center">
-                            <div class="col-sm-6 col-xs-12 mb-3">
-                                <div class="card h-100 link-underline-opacity-0 text-decoration-none">
-                                    <div>
-                                        <img src="<?php echo $imagenURL; ?>" class="card-img-top img-fluid" alt="<?php echo $postura['terminoSanskrit']; ?>" style="max-height: 250px; width: 300px;">
-                                    </div>
-                            </div>
-                            </div>
+                        <div class="col-xs-12 col-sm-6  col-md-6 col-lg-5 mb-3 ">
+                                <h2 class="card-title">Referencia</h2>
+                                <div>
+                                    <img src="<?php echo $imagenURL; ?>" class="card-img-bottom img-fluid w-50" alt="<?php echo $postura['terminoSanskrit']; ?>">
+                                </div>
+                            
+                        </div>
+
                             <div class="col-sm-6 col-xs-12 mb-3">
                                 <div class="card h-100 link-underline-opacity-0 text-decoration-none">
                                     <div class="card-body" style="background-color: #DDD;">
@@ -121,8 +123,11 @@
                                             <?php if (!empty($postura['morfemas'])) { ?>
                                                 <strong>Morfemas:</strong><br>
                                                 <?php foreach ($postura['morfemas'] as $morfemaInfo) { ?>
-                                                    <?php echo $morfemaInfo['traduccionMorfemaSanskrit'] ?>
-                                                    = <?php echo $morfemaInfo['traduccionMorfemaSpanish'] ?><br>
+                                                    <strong>Sánscrito: </strong><?php echo $morfemaInfo['traduccionMorfemaSanskrit'] ?><br>
+                                                    <strong>Español:   </strong><?php echo $morfemaInfo['traduccionMorfemaSpanish'] ?><br>
+                                                    <strong>Inglés:    </strong><?php echo $morfemaInfo['traduccionMorfemaEnglish'] ?><br>
+                                                    --
+                                                    <br>
                                                 <?php } ?>
                                             <?php } else { ?>
                                                 No hay morfemas relacionados.<br>
@@ -141,9 +146,19 @@
                 } ?>
             </div>
 
-            <h2>Video explicativo</h2>
-            <iframe width="560" height="315" src="<?php echo $videoURL; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 offset-lg-2">
+                        <h2>Video explicativo</h2>
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <iframe class="embed-responsive-item" src="<?php echo $videoURL; ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</div>
         
     </main>
 
