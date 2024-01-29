@@ -5,6 +5,7 @@
     $path_buscar_por_palabra_clave_postura = "functions\buscar_por_palabra_clave_postura.php";
     $path_buscar_todos_los_morfemas = "functions\buscar_todos_los_morfemas.php";
     $path_buscar_por_palabra_clave_morfema = "functions\buscar_por_palabra_clave_morfema.php";
+    include("controllers/Buscador.php");
 
 
 
@@ -18,7 +19,7 @@
     } else {
         // Para todas las demás rutas, muestra un error 404
         header('HTTP/1.0 404 Not Found');
-        echo 'Página no encontrada';
+        echo 'Página no encontrada.';
     }
 
 

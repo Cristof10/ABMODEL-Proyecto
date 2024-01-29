@@ -48,6 +48,8 @@ document.querySelector('form').addEventListener('submit', function(event) {
         input.focus();
     }
 });
+
+
 //cuando se detecte un cambio en el filtro se llame a la funcion de filtrado
 document.getElementById('filterOptions').addEventListener('change', function() {
     filter(localStorage.getItem('filterOptions'));

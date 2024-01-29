@@ -1,22 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <!-- CSS de Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <title>Posturas de Yoga</title>
-
-    <!-- CSS de Font Awesome 5 -->
-    <script src="https://kit.fontawesome.com/f4ba8d537c.js" crossorigin="anonymous"></script>
-      
-    <!-- CSS stylesheet -->
-    <link rel="stylesheet" href="css\style.css">
-</head>
-<body>
-  <footer class="footer py-3">
+  <footer class="footer py-3 mt-auto">
     <div class="container">
       <div class="row">
         <div class="col-sm-6">
@@ -38,7 +21,3 @@
     </div>
   </footer>
 
-
-
-</body>
-</html>
