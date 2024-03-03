@@ -19,6 +19,19 @@ class DiccionarioController extends Controller
     }
     public function buscar(Request $request)
     {
+
+        $validateKeyword = true;
+
+        if (!$request->has('keyword')) {
+            $validateKeyword = false;
+        }
+        if ($validateKeyword) {
+            $this->validate($request, [
+                'keyword' => 'regex:/^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ\' ]+$/',
+            ]);
+        }
+        
+          
         $filtro = $request->input('filterOptions');
         $palabraClave = $request->input('keyword');
 

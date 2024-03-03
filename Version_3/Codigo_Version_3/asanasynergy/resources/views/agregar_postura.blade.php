@@ -10,20 +10,20 @@
                     @csrf
 
                     <label for="termino_sanskrit">Ingrese el término en sánscrito:</label>
-                    <input type="text" name="termino_sanskrit" id="termino_sanskrit" class="form-control" **required**>
+                    <input type="text" name="termino_sanskrit" id="termino_sanskrit" class="form-control" required>
 
                     <label for="termino_english">Ingrese el término en inglés:</label>
-                    <input type="text" name="termino_english" id="termino_english" class="form-control" **required**>
+                    <input type="text" name="termino_english" id="termino_english" class="form-control" required>
 
                     <label for="termino_spanish">Ingrese el término en español:</label>
-                    <input type="text" name="termino_spanish" id="termino_spanish" class="form-control" **required**>
+                    <input type="text" name="termino_spanish" id="termino_spanish" class="form-control" required>
 
                     <label for="imagen">Imagen (archivo):</label>
-                    <input type="file" name="imagen" id="imagen" class="form-control" **required**>
+                    <input type="file" name="imagen" id="imagen" class="form-control" required>
 
 
                     <label for="url_video">URL del video:</label>
-                    <input type="text" name="video" id="video" class="form-control" **required**>
+                    <input type="text" name="video" id="video" class="form-control" required>
                     
 
                     <label for="morfema_ids">Morfemas relacionados (opcional):</label>

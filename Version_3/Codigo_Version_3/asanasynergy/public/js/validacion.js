@@ -1,11 +1,11 @@
-function validarInput(input) {
+/*function validarInput(input) {
     var caracteresPermitidos = /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ' ]+$/;
     if(input.match(caracteresPermitidos)) {
         return true;
     } else {
         return false;
     }
-}
+}*/
 
 // Almacena la selección del usuario en el almacenamiento local cuando se envía el formulario
 document.querySelector('form').addEventListener('submit', function() {
@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 //validacion de entrada de números en el form de busqueda
+/*
 document.getElementById('keyword').addEventListener('input', function (e) {
 var regex = /\d/g; // Expresión regular para buscar números
     if (regex.test(e.target.value)) {
@@ -29,8 +30,9 @@ var regex = /\d/g; // Expresión regular para buscar números
 
         
     }
-});
+});*/
 //validacion de entrada de caracteres especiales en el form de busqueda
+/*
 document.querySelector('form').addEventListener('submit', function(event) {
     var input = document.getElementById('keyword').value;
     if(!validarInput(input) && input != "") {
@@ -38,7 +40,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         alert('Error: Campo no válido. Por favor, ingrese al menos una letra o carácter válido.');
     }
 });
-
+*/
 //validacion de entrada null en el form de busqueda
 /*
 document.querySelector('form').addEventListener('submit', function(event) {
@@ -52,6 +54,4 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
 
 //cuando se detecte un cambio en el filtro se llame a la funcion de filtrado
-document.getElementById('filterOptions').addEventListener('change', function() {
-    filter(localStorage.getItem('filterOptions'));
-});
+

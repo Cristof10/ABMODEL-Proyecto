@@ -47,12 +47,13 @@
 
                     $.ajax({
                         url: "{{ route('diccionario.buscar') }}",
-                        method: "POST",
+                        method: "GET",
                         data: formData,
                         success: function(response) {
                             // Actualiza el contenido de la página con los resultados
                             $("#resultados-busqueda").html(response);
-                        }
+                        },
+
                     });
                 });
             });
@@ -78,7 +79,12 @@
                     // Actualiza el contenido de la página con los resultados
                     //redirigir a la página de inicio
                     window.location.href = "{{ route('diccionario.index') }}";
+                    alert('Postura guardada correctamente');
                     
+                },
+                error: function(response) {
+                    console.log(response);
+                    alert('Hubo un error al guardar la postura');
                 }
             });
         });

@@ -15,7 +15,11 @@
                 </div>
                 
                 <div class="input-group me-3" style="flex-grow: 1;">
-                    <input type="search" class="form-control" id="keyword" name="keyword" placeholder="Escriba aquí" >
+                <input type="search" class="form-control" id="keyword" name="keyword" placeholder="Escriba aquí" required
+                    title="Error: Campo no válido. Por favor, ingrese solo letras en este campo y evite usar números o caracteres especiales."
+                    pattern="^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ' ]+$">
+                    
+
                     <button type="submit" class="btn btn-primary"><i class="bi bi-search"></i></button> 
                     <!-- <span class="input-group-text" id="basic-addon1" style="background-color: transparent; border-left: none;"><i class="bi bi-search"></i></span>-->
                 </div>

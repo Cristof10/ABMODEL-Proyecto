@@ -20,7 +20,7 @@ use App\Http\Controllers\MorfemaController;
 Route::get('/', [DiccionarioController::class, 'index'])->name('diccionario.index');
 //Route::post('/buscar', 'DiccionarioController@buscar');
 
-Route::post('/buscar', [DiccionarioController::class, 'buscar'])->name('diccionario.buscar');
+Route::get('/buscar', [DiccionarioController::class, 'buscar'])->name('diccionario.buscar');
 //Route::get('/postura/{id}', 'PosturaController@detalle');
 Route::get('/postura/{id}', [PosturaController::class, 'detalle'])->name('postura.detalle');
 Route::post('/postura', [PosturaController::class, 'store'])->name('posturas.store');
