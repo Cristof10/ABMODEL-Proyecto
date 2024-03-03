@@ -40,6 +40,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 });
 
 //validacion de entrada null en el form de busqueda
+/*
 document.querySelector('form').addEventListener('submit', function(event) {
     var input = document.getElementById('keyword');
     if(input.value.trim() == "") {
@@ -47,7 +48,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
         alert('Error: Campo vacío. Por favor, use solo letras y caracteres válidos');
         input.focus();
     }
-});
+});*/
 
 
 //cuando se detecte un cambio en el filtro se llame a la funcion de filtrado

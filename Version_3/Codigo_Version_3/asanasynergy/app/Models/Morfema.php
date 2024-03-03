@@ -63,9 +63,9 @@ class Morfema extends Model
         return $morfemas;
     }
 
-    public function getIdAttribute()
+    public function getId()
     {
-        return $this->morfemaID; // Assuming morfemaID is the primary key
+        return $this->id; // Assuming morfemaID is the primary key
     }
 
     public function getMorfemaCompletoAttribute()

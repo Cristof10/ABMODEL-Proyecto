@@ -19,6 +19,9 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&family=Titillium+Web&display=swap" rel="stylesheet">
 	
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 </head>
 <body class="d-flex flex-column">
     @include('header')
@@ -35,7 +38,7 @@
 
 
     @include('footer')
-    <script>
+     <script>
             $(document).ready(function() {
                 $("#busqueda-form").submit(function(event) {
                     event.preventDefault();
@@ -53,6 +56,35 @@
                     });
                 });
             });
+            $(document).ready(function() {
+                $('.multiple').select2();
+            });
+
+            document.getElementById('postura_form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma predeterminad
+
+            // Obtener el valor del campo #termino_spanish y reemplazar los espacios en blanco con guiones bajos
+            var termino_spanish = document.getElementById('termino_spanish').value.replace(/\s+/g, "_");
+
+            var formData = new FormData(this);
+            console.log(formData);
+            $.ajax({
+                url: "{{ route('posturas.store') }}",
+                method: "POST",
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function(response) {
+                    // Actualiza el contenido de la página con los resultados
+                    //redirigir a la página de inicio
+                    window.location.href = "{{ route('diccionario.index') }}";
+                    
+                }
+            });
+        });
+
+            
+
     </script>
 </body>
 </html>
