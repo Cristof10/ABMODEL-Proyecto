@@ -27,4 +27,11 @@ class PosturaController extends Controller
 
         return redirect()->route('posturas.index');
     }
+
+    public function detalle($id)
+    {
+        $postura = Postura::find($id);
+
+        return view('detalle_postura', compact('postura'));
+    }
 }
