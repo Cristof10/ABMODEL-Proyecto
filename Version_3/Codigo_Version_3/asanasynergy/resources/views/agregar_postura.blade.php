@@ -18,15 +18,15 @@
                     <label for="termino_spanish">Ingrese el término en español:</label>
                     <input type="text" name="termino_spanish" id="termino_spanish" class="form-control" required>
 
-                    <label for="imagen">Imagen (archivo):</label>
+                    <label for="imagen">Subir imagen de referencia (archivo):</label>
                     <input type="file" name="imagen" id="imagen" class="form-control" required>
 
 
-                    <label for="url_video">URL del video:</label>
+                    <label for="url_video">Ingrese la URL del video embebido:</label>
                     <input type="text" name="video" id="video" class="form-control" required>
                     
 
-                    <label for="morfema_ids">Morfemas relacionados (opcional):</label>
+                    <label for="morfema_ids">Seleccione morfemas relacionados (opcional):</label>
 
                     
                     <select name="morfema_ids[]" id="morfema_ids" class="form-control multiple" multiple="multiple" style="width: 100%">
